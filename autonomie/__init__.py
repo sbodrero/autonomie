@@ -55,6 +55,7 @@ AUTONOMIE_MODULES = (
     "autonomie.views.competence",
     "autonomie.views.csv_import",
     "autonomie.views.customer",
+    "autonomie.views.training",
     "autonomie.views.estimations.estimation",
     "autonomie.views.estimations.lists",
     "autonomie.views.estimations.rest_api",
