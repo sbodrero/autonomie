@@ -1170,7 +1170,7 @@ def get_product_acl(self):
     acl.append(
         (
             Allow,
-            "company:{}".format(self.company_id),
+            "company:{}".format(self.company.id),
             (
                 'list_sale_products',
                 'view_sale_product',
