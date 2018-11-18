@@ -57,7 +57,9 @@ const FileRequirementView = Mn.View.extend({
         );
     },
     onValidate(){
-        this.model.validate();
+        if(this.model.validate()) {
+            this.model.setValid();
+        }
     }
 });
 export default FileRequirementView;

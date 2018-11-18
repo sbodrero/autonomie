@@ -53,15 +53,20 @@ const FileRequirementModel = Bb.Model.extend({
     error(message){
         return {'file_requirements': message};
     },
-    validate(validation_status){
+    validate(){
+        let validation_status = this.get('validation_status');
+        console.log('validation_status',validation_status);
         let result = true;
+        console.log('status',this.get('status'));
         if (this.get('status') != 'success'){
+            console.log('missing', this.missingFile())
             if (this.missingFile()){
                 result = false;
             } else if (validation_status == 'valid'){
                 result = false;
             }
         }
+        console.log('result',result)
         return result;
     }
 });

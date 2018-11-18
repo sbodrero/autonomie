@@ -5434,7 +5434,9 @@ webpackJsonp([2],[
 	        window.openPopup("/files/" + this.model.get("file_id"), this.onFilePopupCallback.bind(this));
 	    },
 	    onValidate: function onValidate() {
-	        this.model.validate();
+	        if (this.model.validate()) {
+	            this.model.setValid();
+	        }
 	    }
 	});
 	exports.default = FileRequirementView;
@@ -11479,15 +11481,20 @@ webpackJsonp([2],[
 	    error: function error(message) {
 	        return { 'file_requirements': message };
 	    },
-	    validate: function validate(validation_status) {
+	    validate: function validate() {
+	        var validation_status = this.get('validation_status');
+	        console.log('validation_status', validation_status);
 	        var result = true;
+	        console.log('status', this.get('status'));
 	        if (this.get('status') != 'success') {
+	            console.log('missing', this.missingFile());
 	            if (this.missingFile()) {
 	                result = false;
 	            } else if (validation_status == 'valid') {
 	                result = false;
 	            }
 	        }
+	        console.log('result', result);
 	        return result;
 	    }
 	});
