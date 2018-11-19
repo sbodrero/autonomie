@@ -55,9 +55,7 @@ const FileRequirementModel = Bb.Model.extend({
     },
     validate(){
         let validation_status = this.get('validation_status');
-        console.log('validation_status',validation_status);
         let result = true;
-        console.log('status',this.get('status'));
         if (this.get('status') != 'success'){
             console.log('missing', this.missingFile())
             if (this.missingFile()){
@@ -66,7 +64,6 @@ const FileRequirementModel = Bb.Model.extend({
                 result = false;
             }
         }
-        console.log('result',result)
         return result;
     }
 });
