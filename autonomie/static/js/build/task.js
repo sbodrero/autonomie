@@ -10035,7 +10035,7 @@ webpackJsonp([2],[
 	  if (stack1 != null) { buffer += stack1; }
 	  return buffer + "</div>\n<div class='col-lg-3 col-md-5 col-sm-7 text-right'>\n</div>\n";
 	},"2":function(depth0,helpers,partials,data) {
-	  return "<div class='col-md-2 col-sm-4 col-xs-12 date'> à la commmande </div>\n";
+	  return "<div class='col-md-2 col-sm-4 col-xs-12 date'> à la commande </div>\n";
 	  },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
 	  var stack1, buffer = "";
 	  stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.amount : depth0), {"name":"if","hash":{},"fn":this.program(1, data),"inverse":this.noop,"data":data});
@@ -11485,7 +11485,6 @@ webpackJsonp([2],[
 	        var validation_status = this.get('validation_status');
 	        var result = true;
 	        if (this.get('status') != 'success') {
-	            console.log('missing', this.missingFile());
 	            if (this.missingFile()) {
 	                result = false;
 	            } else if (validation_status == 'valid') {
